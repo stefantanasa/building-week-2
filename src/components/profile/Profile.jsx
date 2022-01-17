@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import ProfileCarousel from "./ProfileCarousel";
 import RoundButton from "./RoundButton";
+import {BsFillPencilFill} from 'react-icons/bs'
 
 const Jumbotron = () => {
   let [name, setName] = useState("name");
@@ -55,6 +56,16 @@ const Jumbotron = () => {
               alt="profile picture"
             />
             </Col>
+            <Col className="d-flex justify-content-end ">
+            
+
+            <BsFillPencilFill />
+           
+            </Col>
+            
+
+            
+       
 
         
       </Row>
@@ -64,6 +75,7 @@ const Jumbotron = () => {
             <p className="bio">{bio}</p>
           </Row>
           <Row>
+            
             <p>{location}</p>
             <span className="contact-info">- Contact Info</span>
           </Row>
@@ -81,6 +93,9 @@ const Jumbotron = () => {
             height={"50rem"}
           />
           <p>Strive School</p>
+        </Col>
+        <Col className="d-flex justify-content-end pt-3 pr-0">
+        <BsFillPencilFill />
         </Col>
       </Row>
       <Row>
