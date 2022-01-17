@@ -1,10 +1,11 @@
 import {Button} from 'react-bootstrap'
 
-const RoundButton = () => {
+const RoundButton = (props) => {
+    let classProps = "round-button btn btn-sm  rounded-pill border border-4 btn-" + props.color
     
     return ( 
         
-        <button type="button " className="round-button btn btn-sm btn-light rounded-pill border border-4">Open To</button>
+        <button type="button " className={classProps} >{props.text}</button>
      );
 }
  

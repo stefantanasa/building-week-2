@@ -89,9 +89,9 @@ const Jumbotron = () => {
       </Row>
       <Row>
         <Col className="d-flex justify-content-start py-2">
-          <RoundButton />
-          <RoundButton />
-          <RoundButton />
+          <RoundButton text="Open to" color="primary"/>
+          <RoundButton text="Message" color="light"/>
+          <RoundButton text="More" color="light" />
         </Col>
       </Row>
     </Container>
