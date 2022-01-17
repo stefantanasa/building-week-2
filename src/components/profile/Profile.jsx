@@ -46,14 +46,9 @@ const Jumbotron = () => {
     <Container className="bg-light rounded rounded-2 border border-1">
       <Row className="profile-cover" style={{ height: "15rem" }}>
 
-          <Col
-            md={2}
-            className="d-flex justify-content-center align-items-end"
-            
-          >
-              </Col>
+          
 
-            <Col className="d-flex align-items-end justify-content-start">
+            <Col md={3} className="d-flex align-items-end justify-content-center">
             <img
               className="rounded-circle profile-picture "
               src={profilPicture}
@@ -95,7 +90,7 @@ const Jumbotron = () => {
           <RoundButton text="More" color="light" />
         </Col>
       </Row>
-      <Row>
+      <Row className="d-flex justify-content-center">
           <ProfileCarousel />
       </Row>
     </Container>
