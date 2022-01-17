@@ -35,3 +35,8 @@ code {
 .contact-info {
   color: blue;
 }
+
+.profile-carousell-card {
+  height: 100px;
+  width: 600px;
+}

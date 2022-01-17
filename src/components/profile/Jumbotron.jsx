@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
+import ProfileCarousel from "./ProfileCarousel";
 import RoundButton from "./RoundButton";
 
 const Jumbotron = () => {
@@ -93,6 +94,9 @@ const Jumbotron = () => {
           <RoundButton text="Message" color="light"/>
           <RoundButton text="More" color="light" />
         </Col>
+      </Row>
+      <Row>
+          <ProfileCarousel />
       </Row>
     </Container>
   );
