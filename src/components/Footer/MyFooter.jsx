@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col,Container} from "react-bootstrap";
 import "./Footer.css";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import {RiSettings4Fill} from "react-icons/ri";
@@ -7,6 +7,7 @@ import {RiSettings4Fill} from "react-icons/ri";
 class MyFooter extends React.Component {
   render() {
     return (
+      <Container className="container-fluid">
       <div className="container">
         <footer className="footer">
           <Row>
@@ -49,6 +50,7 @@ class MyFooter extends React.Component {
           </Row>
         </footer>
       </div>
+      </Container>
     );
   }
 }

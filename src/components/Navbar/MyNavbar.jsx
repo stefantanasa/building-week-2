@@ -23,7 +23,7 @@ class MyNavbar extends React.Component {
   render() {
     return (
       <div className="container ">
-        <Navbar sticky="top" className="navbar" variant="white">
+        <Navbar sticky="top" className="container" variant="white">
           <Row>
             <Col>
               <Navbar.Brand href="#">
