@@ -5,6 +5,7 @@ import Profile from "./components/profile/Profile";
 import Dashboard from "./components/dashboard/Dashboard";
 import About from "./components/about/About";
 import Activity from "./components/Activity/Activity";
+import Skills from "./components/skills/Skills";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Dashboard />
             <About />
             <Activity />
+            <Skills />
           </Col>
           <Col sx={4}>
             <h1>Sidebar</h1>
