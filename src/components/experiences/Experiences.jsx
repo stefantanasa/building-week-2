@@ -2,9 +2,10 @@ import Template from "../about/Template";
 import { BsFillPencilFill } from "react-icons/bs";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import ExperienceTemplate from "./ExperienceTemplate";
 
 const Experiences = (props) => {
-  let [method, setMethod] = useState("POST");
+  
 
   let [experience, setExperience] = useState({
     role: "",
@@ -15,16 +16,8 @@ const Experiences = (props) => {
     area: "",
   });
 
-  //   let displayForm = () => {
+  
 
-  //     if (displayClass === "d-none") {
-  //       setDisplayClass(" ");
-  //     } else if (displayClass === "d-none") {
-  //       setDisplayClass(" ");
-  //     } else {
-  //       console.log("There is something wrong in the displayForm fct");
-  //     }
-  //   };
 
   let handleInputs = (property, value) => {
     setExperience({
@@ -88,9 +81,7 @@ const Experiences = (props) => {
       );
       if (response.ok) {
         const data = await response.json();
-        setExperience({
-            ...data
-           })
+        setExperience(data)
            console.log(experience)
        
         console.log("");
@@ -118,27 +109,10 @@ const Experiences = (props) => {
           content={
             <Container>
 
-                
-<Row className="">
-<Col md={2}>
-  <img
-    src="https://media-exp1.licdn.com/dms/image/C560BAQHlZSKLDMyuUA/company-logo_200_200/0/1519856155971?e=1650499200&v=beta&t=WHaxAKTLQLbhNG7tzOIGUMSlHIgS0AtGqoj3zj_dE5k"
-    width={"100px"}
-  />
-</Col>
-<Col className="">
-  <h5 className="experience-role text-left p-0">Student</h5>
-  <p className="experience-company text-left p-0">
-    Company: { props.company} 
-  </p>
-  <p className="experience-dates text-left p-0">
-    Start: {props.expStart} - End {props.expEnd}{" "}
-  </p>
-  <p className="experience-dates text-left p-0">
-    Start: {props.expStart} - End {props.expEnd}{" "}
-  </p>
-</Col>
-</Row>
+<ExperienceTemplate company={"Strive"} role={console.log(experience.role) }  startDate={"November"} endDate={"May"} area={"United Kingdom"} />
+
+
+{/* <ExperienceTemplate company={"Strive"} role={experience.role === "undefined" ? experience.role : experience[0].role}  startDate={"November"} endDate={"May"} area={"United Kingdom"} /> */}
 
 
 {/* {
