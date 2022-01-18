@@ -4,8 +4,13 @@ import { Row, Col, Container } from "react-bootstrap";
 import Profile from "./components/profile/Profile";
 import Dashboard from "./components/dashboard/Dashboard";
 import About from "./components/about/About";
-import Activity from "./components/Activity/Activity";
+
 import Skills from "./components/skills/Skills";
+
+import Interests from "./components/interests/Interests";
+import Activity from "./components/activity/Activity";
+import Accomplishments from "./components/accomplishments/Accomplishments";
+import Causes from "./components/causes/Causes";
 
 function App() {
   return (
@@ -18,6 +23,9 @@ function App() {
             <About />
             <Activity />
             <Skills />
+            <Accomplishments />
+            <Interests />
+            <Causes name={"Stefan"} surname={"Tanasa"} />
           </Col>
           <Col sx={4}>
             <h1>Sidebar</h1>

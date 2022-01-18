@@ -90,7 +90,7 @@ const Jumbotron = () => {
           <img
             src="https://media-exp1.licdn.com/dms/image/C4D0BAQFFQIjyDsOK0w/company-logo_100_100/0/1593351903670?e=1650499200&v=beta&t=mloP18Niezg5N-k-LGhNL_bZk13RTZyY9PgVGKDUOrs"
             alt="school image"
-            height={"50rem"}
+            height={"30rem"}
           />
           <p>Strive School</p>
         </Col>
