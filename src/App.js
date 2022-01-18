@@ -11,6 +11,7 @@ import Interests from "./components/interests/Interests";
 import Activity from "./components/activity/Activity";
 import Accomplishments from "./components/accomplishments/Accomplishments";
 import Causes from "./components/causes/Causes";
+import Experiences from "./components/experiences/Experiences";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Dashboard />
             <About />
             <Activity />
+            <Experiences />
             <Skills />
             <Accomplishments />
             <Interests />
