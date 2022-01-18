@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Row, Col, Container } from "react-bootstrap";
+import Profile from "./components/profile/Profile";
+import Dashboard from "./components/dashboard/Dashboard";
+import About from "./components/about/About";
+
+import Skills from "./components/skills/Skills";
+
+import Interests from "./components/interests/Interests";
+import Activity from "./components/activity/Activity";
+import Accomplishments from "./components/accomplishments/Accomplishments";
+import Causes from "./components/causes/Causes";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Row>
+          <Col xs={8}>
+            <Profile />
+            <Dashboard />
+            <About />
+            <Activity />
+            <Skills />
+            <Accomplishments />
+            <Interests />
+            <Causes name={"Stefan"} surname={"Tanasa"} />
+          </Col>
+          <Col sx={4}>
+            <h1>Sidebar</h1>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
