@@ -126,7 +126,7 @@ image: ""
                     startDate={exp.startDate}
                     endDate={exp.endDate}
                     area={exp.area}
-                    image={exp.image}
+                    
                     key={exp._id}
                     
                     
@@ -213,14 +213,8 @@ image: ""
                     required
                     placeholder="Location. Example:London, UK"
                   />
-                  <FormLabel>Attach a photo</FormLabel>
-                  <Form.Control
-                    type="file"
-                    value={experience.area}
-                    onChange={(e) => handleInputs("image", e.target.value)}
-                    required
-                    placeholder="Attach the logo"
-                  />
+                  
+                  
                 </Form.Group>
                 <Button className="btn   m-2" type="submit">
                   Submit

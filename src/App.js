@@ -6,17 +6,25 @@ import Dashboard from "./components/dashboard/Dashboard";
 import About from "./components/about/About";
 
 import Skills from "./components/skills/Skills";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Interests from "./components/interests/Interests";
 import Activity from "./components/activity/Activity";
 import Accomplishments from "./components/accomplishments/Accomplishments";
 import Causes from "./components/causes/Causes";
 import Experiences from "./components/experiences/Experiences";
+import ProfilePage from "./components/pages/ProfilePage";
 
 function App() {
   return (
     <div className="App">
-      <Container>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/newsfeed" element={<h4>Newsfeed</h4>} />
+          <Route path="/" element={<ProfilePage />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <Container>
         <Row>
           <Col xs={8}>
             <Profile />
@@ -33,7 +41,7 @@ function App() {
             <h1>Sidebar</h1>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </div>
   );
 }
