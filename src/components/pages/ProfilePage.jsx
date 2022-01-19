@@ -9,12 +9,18 @@ import Experiences from "../experiences/Experiences";
 import Interests from "../interests/Interests";
 import Profile from "../profile/Profile";
 import Skills from "../skills/Skills";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import MyNavbar from '../Navbar/MyNavbar'
+import MyFooter from '../Footer/MyFooter'
+import { Link } from "react-router-dom";
+
 
 
 const ProfilePage = () => {
     return ( 
         <Container>
+          <Row>
+          <MyNavbar />
+          </Row>
         <Row>
           <Col xs={8}>
                 <Link to="/newsfeed">Newsfeed</Link>
@@ -28,20 +34,13 @@ const ProfilePage = () => {
               <Interests />
               <Causes name={"Stefan"} surname={"Tanasa"}/>
 
-
-            {/* <Profile />
-            <Dashboard />
-            <About />
-            <Activity />
-            <Experiences />
-            <Skills />
-            <Accomplishments />
-            <Interests />
-            <Causes name={"Stefan"} surname={"Tanasa"} /> */}
           </Col>
           <Col sx={4}>
             <h1>Sidebar</h1>
           </Col>
+        </Row>
+        <Row>
+          <MyFooter />
         </Row>
       </Container>
      );
