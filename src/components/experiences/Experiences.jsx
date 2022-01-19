@@ -1,31 +1,42 @@
 import Template from "../about/Template";
-import { BsFillPencilFill } from "react-icons/bs";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { BsPlusLg } from "react-icons/bs";
+import { Container, Row, Col, Form, Button, FormLabel } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import ExperienceTemplate from "./ExperienceTemplate";
 
 const Experiences = () => {
   let [experience, setExperience] = useState([
     {
-      role: "Student",
+      role: "",
       company: "",
       startDate: "",
       endDate: "",
       description: "",
       area: "",
-      _id: ""
+      image: ""
+      
     },
   ]);
+let [beforeSubmit, setBeforeSubmit] = useState({
+role: "",
+company: "",
+startDate: "",
+endDate: "",
+description: "",
+area: "",
+image: ""
+})
 
   let handleInputs = (property, value) => {
-    setExperience({
-      ...experience,
+    setBeforeSubmit({
+      ...beforeSubmit,
+      
       [property]: value,
     });
-    console.log(experience);
+    console.log(beforeSubmit);
   };
 
-  let [hideForm, setHideForm] = useState("");
+  let [hideForm, setHideForm] = useState("d-none");
 
   let hide = () => {
     if (hideForm === "") {
@@ -42,9 +53,9 @@ const Experiences = () => {
         "https://striveschool-api.herokuapp.com/api/profile/61e54cf173d5cb0015395aa2/experiences",
         {
           method: "POST",
-          body: JSON.stringify(experience),
+          body: JSON.stringify(beforeSubmit),
           headers: {
-            "Content-Type": "application/json",
+            
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1NGNmMTczZDVjYjAwMTUzOTVhYTIiLCJpYXQiOjE2NDI0MTczOTQsImV4cCI6MTY0MzYyNjk5NH0.BOYfYGGB52eViSSMJgOdkm2UU07TAQm8j6NPZ352yRA",
           },
@@ -97,31 +108,128 @@ const Experiences = () => {
       <Row className="bg-light rounded border border-2 my-3">
         <Container>
           <Row>
-            <Col className="d-flex justify-content-start  my-1">
+            <Col className="d-flex justify-content-start  my-2">
               <p>Experieces</p>
             </Col>
 
-            <Col className="d-flex justify-content-end  my-1">
-              <BsFillPencilFill style={{ cursor: "pointer" }} onClick={hide} />
+            <Col className="d-flex justify-content-end  my-2">
+              <BsPlusLg style={{ cursor: "pointer" }} onClick={hide} />
             </Col>
           </Row>
           <Row>
             <Col>
-            {experience.map((exp) => (
+            {experience[0].role ===""? console.log("role is emplty and the id is", experience[0]._id) : experience.map((exp) => (
                 <>
-                  
                   <ExperienceTemplate
                     role={exp.role}
                     company={exp.company}
-                    startDate={"November"}
-                    endDate={"May"}
-                    area={"United Kingdom"}
+                    startDate={exp.startDate}
+                    endDate={exp.endDate}
+                    area={exp.area}
+                    image={exp.image}
+                    key={exp._id}
                     
                     
                   />
                 </>
               ))}
+                                 
+<Form className={hideForm} onSubmit={handleSubmit}>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  
+                  <Form.Control
+                    type="text"
+                    value={experience.role}
+                    onChange={(e) => handleInputs("role", e.target.value)}
+                    required
+                    placeholder="Position"
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                
+                  <Form.Control
+                    type="text"
+                    value={experience.company}
+                    onChange={(e) => handleInputs("company", e.target.value)}
+                    required
+                    placeholder="Company name"
+                  />
+                </Form.Group>
+                <Form.Group
+                  required
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  
+                  <Form.Control
+                    type="date"
+                    value={experience.startDate}
+                    onChange={(e) => handleInputs("startDate", e.target.value)}
+                    required
+                    placeholder="Start Date"
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  
+                  <Form.Control
+                    type="date"
+                    value={experience.endDate}
+                    onChange={(e) => handleInputs("endDate", e.target.value)}
+                    placeholder="End Date"
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  
+                  <Form.Control
+                    type="textarea"
+                    value={experience.description}
+                    onChange={(e) =>
+                      handleInputs("description", e.target.value)
+                    }
+                    required
+                    placeholder="Add an description"
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  <Form.Control
+                    type="text"
+                    value={experience.area}
+                    onChange={(e) => handleInputs("area", e.target.value)}
+                    required
+                    placeholder="Location. Example:London, UK"
+                  />
+                  <FormLabel>Attach a photo</FormLabel>
+                  <Form.Control
+                    type="file"
+                    value={experience.area}
+                    onChange={(e) => handleInputs("image", e.target.value)}
+                    required
+                    placeholder="Attach the logo"
+                  />
+                </Form.Group>
+                <Button className="btn   m-2" type="submit">
+                  Submit
+                </Button>
+ 
+               
+              </Form>   
             </Col>
+            
           </Row>
         </Container>
       </Row>
@@ -159,98 +267,7 @@ experience.length === 0 ? console.log("NO ITEMS"):  experience.map(exp =>
 
 )} */}
 
-              {/*       
-<Form className={hideForm} onSubmit={handleSubmit}>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Label>Role</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={experience.role}
-                    onChange={(e) => handleInputs("role", e.target.value)}
-                    required
-                    placeholder="Student"
-                  />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Label>Company</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={experience.company}
-                    onChange={(e) => handleInputs("company", e.target.value)}
-                    required
-                    placeholder="Company"
-                  />
-                </Form.Group>
-                <Form.Group
-                  required
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Label>Start</Form.Label>
-                  <Form.Control
-                    type="date"
-                    value={experience.startDate}
-                    onChange={(e) => handleInputs("startDate", e.target.value)}
-                    required
-                    placeholder="Start"
-                  />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Label>End</Form.Label>
-                  <Form.Control
-                    type="date"
-                    value={experience.endDate}
-                    onChange={(e) => handleInputs("endDate", e.target.value)}
-                    placeholder="Start"
-                  />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Label>Description</Form.Label>
-                  <Form.Control
-                    type="textarea"
-                    value={experience.description}
-                    onChange={(e) =>
-                      handleInputs("description", e.target.value)
-                    }
-                    required
-                    placeholder="Learning stuff"
-                  />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Label>Area</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={experience.area}
-                    onChange={(e) => handleInputs("area", e.target.value)}
-                    required
-                    placeholder="London, UK"
-                  />
-                </Form.Group>
-                <Button className="btn   m-2" type="submit">
-                  Submit
-                </Button>
-                <Button className="btn btn-success m-2" type="submit">
-                  Edit
-                </Button>
-                <Button className="btn btn-danger m-2" type="submit">
-                  Delete
-                </Button>
-              </Form>          */}
+       
 
               <Row></Row>
             </Container>
