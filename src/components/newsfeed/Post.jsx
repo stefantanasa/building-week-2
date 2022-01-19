@@ -37,8 +37,8 @@ const Post = (props) => {
       </Row>
       <Row >
            <div className="post-description p-2">
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi perferendis rerum eos eaque aut nemo fugit incidunt iure sint labore!
-          </div> 
+               {props.postDescription }
+                         </div> 
           </Row>
       <Row> 
           

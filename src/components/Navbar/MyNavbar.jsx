@@ -18,6 +18,7 @@ import { IoNotifications } from "react-icons/io5";
 import { IoPerson } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
 import { RiGridFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 class MyNavbar extends React.Component {
   render() {
@@ -27,7 +28,11 @@ class MyNavbar extends React.Component {
           <Row>
             <Col>
               <Navbar.Brand href="#">
-                <img className="navlogo" src="linkedin-new.png" alt="" />
+      <Link to="/newsfeed" >
+
+                <img className="navlogo"  src="linkedin-new.png" alt="" />
+      </Link>
+
               </Navbar.Brand>
             </Col>
           </Row>
@@ -87,7 +92,11 @@ class MyNavbar extends React.Component {
             <Row>
               <Col>
                 <div>
+
+                  <Link to="/me">
+
                   <IoPerson className="iconsinnav" />
+                  </Link>
                   <NavDropdown
                     className="textss"
                     title="me"
