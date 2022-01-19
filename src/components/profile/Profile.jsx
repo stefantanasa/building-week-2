@@ -29,7 +29,7 @@ const Jumbotron = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
+          console.log("Profile info:" ,data);
           setProfilePicture(data.image);
           setBio(data.bio);
           setLocation(data.area);

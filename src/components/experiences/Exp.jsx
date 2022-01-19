@@ -1,9 +1,9 @@
 import {Col, Row} from 'react-bootstrap'
 
-const ExperienceTemplate = (props) => {
+const Exp = (props) => {
     return ( 
-                        
-<Row className="" >
+        <Row>
+
 <Col md={2}>
   <img
     src="https://media-exp1.licdn.com/dms/image/C560BAQHlZSKLDMyuUA/company-logo_200_200/0/1519856155971?e=1650499200&v=beta&t=WHaxAKTLQLbhNG7tzOIGUMSlHIgS0AtGqoj3zj_dE5k"
@@ -22,8 +22,10 @@ const ExperienceTemplate = (props) => {
     Location: {props.area}
   </p>
 </Col>
-</Row>
+        
+        
+          </Row>
      );
 }
  
-export default ExperienceTemplate;
+export default Exp;

@@ -4,20 +4,18 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import ExperienceTemplate from "./ExperienceTemplate";
 
-const Experiences = (props) => {
-  
-
-  let [experience, setExperience] = useState({
-    role: "",
-    company: "",
-    startDate: "",
-    endDate: "",
-    description: "",
-    area: "",
-  });
-
-  
-
+const Experiences = () => {
+  let [experience, setExperience] = useState([
+    {
+      role: "Student",
+      company: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+      area: "",
+      _id: ""
+    },
+  ]);
 
   let handleInputs = (property, value) => {
     setExperience({
@@ -27,64 +25,37 @@ const Experiences = (props) => {
     console.log(experience);
   };
 
-  let [hideForm, setHideForm] = useState("")
+  let [hideForm, setHideForm] = useState("");
 
-  let hide = ()=>{
-      if (hideForm === "") {
-          setHideForm("d-none")
-      }else if (hideForm === "d-none"){
-          setHideForm("")
-      }
-  }
-
+  let hide = () => {
+    if (hideForm === "") {
+      setHideForm("d-none");
+    } else if (hideForm === "d-none") {
+      setHideForm("");
+    }
+  };
 
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch(
-          "https://striveschool-api.herokuapp.com/api/profile/61e54cf173d5cb0015395aa2/experiences",
-          {
-            method: "POST",
-            body: JSON.stringify(experience),
-            headers: {
-                "Content-Type": "application/json",
-                Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1NGNmMTczZDVjYjAwMTUzOTVhYTIiLCJpYXQiOjE2NDI0MTczOTQsImV4cCI6MTY0MzYyNjk5NH0.BOYfYGGB52eViSSMJgOdkm2UU07TAQm8j6NPZ352yRA",
-              },
-          }
-        );
-        if (response.ok) {
-           let data = await response.json();
-           setExperience({
-            ...data
-           })
-          console.log(experience);
-        } else {
-          console.log("error while fetching");
-        }
-      } catch (e) {
-        console.log(e);
-      }
-  };
-
-  let fetchData = async () => {
-    try {
       const response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/61e54cf173d5cb0015395aa2/experiences",
         {
-          method: "GET",
+          method: "POST",
+          body: JSON.stringify(experience),
           headers: {
+            "Content-Type": "application/json",
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1NGNmMTczZDVjYjAwMTUzOTVhYTIiLCJpYXQiOjE2NDI0MTczOTQsImV4cCI6MTY0MzYyNjk5NH0.BOYfYGGB52eViSSMJgOdkm2UU07TAQm8j6NPZ352yRA",
           },
         }
       );
       if (response.ok) {
-        const data = await response.json();
-        setExperience(data)
-           console.log(experience)
-       
-        console.log("");
+        let data = await response.json();
+        setExperience({
+          ...data,
+        });
+        console.log(experience);
       } else {
         console.log("error while fetching");
       }
@@ -93,29 +64,73 @@ const Experiences = (props) => {
     }
   };
 
-
-
   useEffect(() => {
-    
+    let fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/profile/61e54cf173d5cb0015395aa2/experiences",
+          {
+            method: "GET",
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1NGNmMTczZDVjYjAwMTUzOTVhYTIiLCJpYXQiOjE2NDI0MTczOTQsImV4cCI6MTY0MzYyNjk5NH0.BOYfYGGB52eViSSMJgOdkm2UU07TAQm8j6NPZ352yRA",
+            },
+          }
+        );
+        if (response.ok) {
+          let data = await response.json();
+
+          console.log(data);
+          setExperience(data);
+        } else {
+          console.log("error while fetching");
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
     fetchData();
   }, []);
 
   return (
     <Container>
+      <Row className="bg-light rounded border border-2 my-3">
+        <Container>
+          <Row>
+            <Col className="d-flex justify-content-start  my-1">
+              <p>Experieces</p>
+            </Col>
+
+            <Col className="d-flex justify-content-end  my-1">
+              <BsFillPencilFill style={{ cursor: "pointer" }} onClick={hide} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            {experience.map((exp) => (
+                <>
+                  
+                  <ExperienceTemplate
+                    role={exp.role}
+                    company={exp.company}
+                    startDate={"November"}
+                    endDate={"May"}
+                    area={"United Kingdom"}
+                    
+                    
+                  />
+                </>
+              ))}
+            </Col>
+          </Row>
+        </Container>
+      </Row>
       <Row>
         <Template
           title={"Experiences"}
-          icon={<BsFillPencilFill style={{cursor: "pointer"}}  onClick={hide}/>}
           content={
             <Container>
-
-<ExperienceTemplate company={"Strive"} role={console.log(experience.role) }  startDate={"November"} endDate={"May"} area={"United Kingdom"} />
-
-
-{/* <ExperienceTemplate company={"Strive"} role={experience.role === "undefined" ? experience.role : experience[0].role}  startDate={"November"} endDate={"May"} area={"United Kingdom"} /> */}
-
-
-{/* {
+              {/* {
 
   
 
@@ -144,10 +159,8 @@ experience.length === 0 ? console.log("NO ITEMS"):  experience.map(exp =>
 
 )} */}
 
-
-               
-
-              <Form className={hideForm} onSubmit={handleSubmit}>
+              {/*       
+<Form className={hideForm} onSubmit={handleSubmit}>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
@@ -237,7 +250,7 @@ experience.length === 0 ? console.log("NO ITEMS"):  experience.map(exp =>
                 <Button className="btn btn-danger m-2" type="submit">
                   Delete
                 </Button>
-              </Form>
+              </Form>          */}
 
               <Row></Row>
             </Container>
