@@ -11,12 +11,12 @@ const Accomplishments = () => {
         <Container>
           <Row>
             <Col>
-              <li class="list-group-item">An item</li>
+              <li className="list-group-item">An item</li>
             </Col>
           </Row>
           <Row>
             <Col>
-              <li class="list-group-item">An item</li>
+              <li className="list-group-item">An item</li>
             </Col>
           </Row>
         </Container>

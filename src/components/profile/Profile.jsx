@@ -29,10 +29,12 @@ const Jumbotron = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
+          console.log("Profile info:" ,data);
           setProfilePicture(data.image);
           setBio(data.bio);
           setLocation(data.area);
+          setName(data.name);
+          setSurname(data.surname)
         } else {
           console.log("error while fetching");
         }
@@ -45,6 +47,7 @@ const Jumbotron = () => {
 
   return (
     <Container className="bg-light rounded rounded-2 border border-1">
+      
       <Row className="profile-cover" style={{ height: "15rem" }}>
 
           
@@ -72,6 +75,7 @@ const Jumbotron = () => {
       <Row className="px-3">
         <Col md={7} className="">
           <Row>
+            <h4>{name +" " +surname}</h4>
             <p className="bio">{bio}</p>
           </Row>
           <Row>

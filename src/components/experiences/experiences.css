@@ -1,0 +1,12 @@
+.pencil:hover {
+  border-radius: 10em;
+  outline-offset: 10px;
+  height: 1.5em;
+  width: 1.5em;
+  background-color: rgb(197, 197, 197);
+}
+
+.pencil {
+  height: 1em;
+  width: 1em;
+}
