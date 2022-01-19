@@ -6,7 +6,7 @@ const MiddlePart = (props) => {
   return (
     <Container className="rounded-lg ">
       <TopMiddle profilePicture={props.profilePicture} />
-      <h1>Space</h1>
+      
       <Post
         profilePicture={props.profilePicture}
         name={props.name}
