@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "./components/pages/ProfilePage";
 import NewsfeedPage from "./components/pages/NewsfeedPage";
 import { useState, useEffect } from "react";
+import Error404 from "./components/errors/Error404";
 
 function App() {
   let [profilePicture, setProfilePicture] = useState("");
@@ -55,6 +56,7 @@ function App() {
               />
             }
           />
+          <Route path="*" element={<Error404 />} />
 
           <Route path="/" element={<ProfilePage />} />
         </Routes>

@@ -9,45 +9,45 @@ import PillButton from "./PillButton";
 
 const Post = (props) => {
   return (
-    <Container className="border rounded">
+    <Container className="border rounded my-3">
       <Row>
         <Col className="d-flex">
         <p>
         John and Chris liked this post
         </p>
         </Col>
-        <Col md={1} ><HiOutlineDotsHorizontal /></Col>
+        <Col sm={1} ><HiOutlineDotsHorizontal /></Col>
       </Row>
       <Row>
-        <Col md={3}>
+        <Col sm={2}>
           <img
             className="rounded-circle"
             src={props.profilePicture}
             alt="profile picture"
-            style={{ height: "60px", width: "60px" }}
+            style={{ height: "50px", width: "50px" }}
           />
         </Col>
 
-        <Col>
+        <Col sm={6}>
           <Row>{props.name + " " + props.surname}</Row>
           <Row>Job title</Row>
         </Col>
 
-        <Col md={4} className="follow"> <BsPlusLg /> follow</Col>
+        <Col sm={4} className="follow"> <BsPlusLg /> follow</Col>
       </Row>
       <Row >
-           <div className="post-description">
+           <div className="post-description p-2">
                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi perferendis rerum eos eaque aut nemo fugit incidunt iure sint labore!
           </div> 
           </Row>
       <Row> 
           
-    <img width={"100%"} src="https://images.unsplash.com/photo-1642478862237-3eafc24f32b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=675&q=80" alt="img post" />
+    <img width={"100%"} src={props.postPhoto} alt="img post" />
 
      </Row>
       <Row>
-        <Col md={4}>reactions</Col>
-        <Col md={8}> 300 comments 400,000 views</Col>
+        <Col sm={4}>reactions</Col>
+        <Col sm={8}> 300 comments 400,000 views</Col>
       </Row>
       <Row className="p-2 d-flex justify-content-between"> 
           <PillButton reaction={"Angry"} />
@@ -57,16 +57,16 @@ const Post = (props) => {
           <PillButton reaction={"mneah.."} />
           <PillButton reaction={"Huoo"} />
      </Row>
-      <Row>
-        <Col>
+      <Row className="pb-2 ">
+        <Col className="reacts-buttons d-flex justify-content-center align-items-center">
         <AiFillLike/>like
         </Col>
-        <Col><FaRegCommentDots/> comment</Col>
-        <Col><BiShare/> share</Col>
-        <Col><GrSend/> send</Col>
+        <Col className="reacts-buttons d-flex justify-content-center align-items-center"><FaRegCommentDots/> comment</Col>
+        <Col className="reacts-buttons d-flex justify-content-center align-items-center"><BiShare/> share</Col>
+        <Col className="reacts-buttons d-flex justify-content-center align-items-center"><GrSend/> send</Col>
       </Row>
       <Row>
-        <Col md={3}> <img
+        <Col sm={3}> <img
             className="rounded-circle"
             src={props.profilePicture}
             alt="profile picture"
