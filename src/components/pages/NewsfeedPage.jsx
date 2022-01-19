@@ -10,7 +10,9 @@ const NewsfeedPage = (props) => {
         <Container>
             <Row>
                 <Col md={3}><LeftSide /></Col>
-                <Col md={6}><MiddlePart profilePicture={props.profilePicture} /></Col>
+                <Col md={6}><MiddlePart profilePicture={props.profilePicture}                 name={props.name}
+                surname={props.surname}  /></Col>
+                
                 <Col md={3}><RightSide /></Col>
             </Row>
         </Container>

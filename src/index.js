@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./components/profile/profile.css";
 import "./components/experiences/experiences.css";
+import "./components/newsfeed/newsfeed.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

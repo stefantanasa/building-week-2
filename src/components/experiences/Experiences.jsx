@@ -24,7 +24,7 @@ startDate: "",
 endDate: "",
 description: "",
 area: "",
-image: ""
+
 })
 
   let handleInputs = (property, value) => {
@@ -33,7 +33,7 @@ image: ""
       
       [property]: value,
     });
-    console.log(beforeSubmit);
+  
   };
 
   let [hideForm, setHideForm] = useState("d-none");
@@ -64,7 +64,7 @@ image: ""
       if (response.ok) {
         let data = await response.json();
         setExperience({
-          ...data,
+          ...data
         });
         console.log(experience);
       } else {
@@ -126,7 +126,7 @@ image: ""
                     startDate={exp.startDate}
                     endDate={exp.endDate}
                     area={exp.area}
-                    
+                    description={exp.description}
                     key={exp._id}
                     
                     

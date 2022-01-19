@@ -28,7 +28,7 @@ function App() {
           console.log("Profile info:", data);
           setProfilePicture(data.image);
           setName(data.name);
-          setSurname(data.Surname);
+          setSurname(data.surname);
           setEmail(data.email);
         } else {
           console.log("error while fetching");
@@ -55,6 +55,7 @@ function App() {
               />
             }
           />
+
           <Route path="/" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
