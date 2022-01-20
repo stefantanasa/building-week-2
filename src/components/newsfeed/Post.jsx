@@ -1,10 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { BsPlusLg } from 'react-icons/bs';
-import { AiFillLike } from 'react-icons/ai';
-import { GrSend } from 'react-icons/gr';
-import { FaRegCommentDots } from 'react-icons/fa';
-import { BiShare } from 'react-icons/bi';
-import { HiOutlineDotsHorizontal } from 'react-icons/hi';
+import { BsPlusLg } from "react-icons/bs";
+import { AiFillLike } from "react-icons/ai";
+import { GrSend } from "react-icons/gr";
+import { FaRegCommentDots } from "react-icons/fa";
+import { BiShare } from "react-icons/bi";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import PillButton from "./PillButton";
 
 const Post = (props) => {
@@ -12,11 +12,11 @@ const Post = (props) => {
     <Container className="border rounded my-3">
       <Row>
         <Col className="d-flex">
-        <p>
-        John and Chris liked this post
-        </p>
+          <p>John and Chris liked this post</p>
         </Col>
-        <Col sm={1} ><HiOutlineDotsHorizontal /></Col>
+        <Col sm={1}>
+          <HiOutlineDotsHorizontal />
+        </Col>
       </Row>
       <Row>
         <Col sm={2}>
@@ -33,50 +33,63 @@ const Post = (props) => {
           <Row>Job title</Row>
         </Col>
 
-        <Col sm={4} className="follow"> <BsPlusLg /> follow</Col>
+        <Col sm={4} className="follow">
+          {" "}
+          <BsPlusLg /> follow
+        </Col>
       </Row>
-      <Row >
-           <div className="post-description p-2">
-               {props.postDescription }
-                         </div> 
-          </Row>
-      <Row> 
-          
-    <img width={"100%"} src={props.postPhoto} alt="img post" />
-
-     </Row>
+      <Row>
+        <div className="post-description p-2">{props.postDescription}</div>
+      </Row>
+      <Row>
+        <img width={"100%"} src={props.postPhoto} alt="img post" />
+      </Row>
       <Row>
         <Col sm={4}>reactions</Col>
         <Col sm={8}> 300 comments 400,000 views</Col>
       </Row>
-      <Row className="p-2 d-flex justify-content-between"> 
-          <PillButton reaction={"Angry"} />
-          <PillButton reaction={"Do it"} />
-          <PillButton reaction={"Love it"} />
-          <PillButton reaction={"Angry"} />
-          <PillButton reaction={"mneah.."} />
-          <PillButton reaction={"Huoo"} />
-     </Row>
+      <Row className="p-2 d-flex justify-content-between">
+        <PillButton reaction={"Angry"} />
+        <PillButton reaction={"Do it"} />
+        <PillButton reaction={"Love it"} />
+        <PillButton reaction={"Angry"} />
+        <PillButton reaction={"mneah.."} />
+        <PillButton reaction={"Huoo"} />
+      </Row>
       <Row className="pb-2 ">
         <Col className="reacts-buttons d-flex justify-content-center align-items-center">
-        <AiFillLike/>like
+          <AiFillLike />
+          like
         </Col>
-        <Col className="reacts-buttons d-flex justify-content-center align-items-center"><FaRegCommentDots/> comment</Col>
-        <Col className="reacts-buttons d-flex justify-content-center align-items-center"><BiShare/> share</Col>
-        <Col className="reacts-buttons d-flex justify-content-center align-items-center"><GrSend/> send</Col>
+        <Col className="reacts-buttons d-flex justify-content-center align-items-center">
+          <FaRegCommentDots /> comment
+        </Col>
+        <Col className="reacts-buttons d-flex justify-content-center align-items-center">
+          <BiShare /> share
+        </Col>
+        <Col className="reacts-buttons d-flex justify-content-center align-items-center">
+          <GrSend /> send
+        </Col>
       </Row>
       <Row>
-        <Col sm={3}> <img
+        <Col sm={3}>
+          {" "}
+          <img
             className="rounded-circle"
             src={props.profilePicture}
             alt="profile picture"
             style={{ height: "60px", width: "60px" }}
-          /></Col>
+          />
+        </Col>
         <Col>
-        <div className="form-group rounded-pill">
-    
-    <textarea className="form-control rounded-pill" id="exampleFormControlTextarea1" placeholder="Write a comment..." rows="2"></textarea>
-  </div>
+          <div className="form-group rounded-pill">
+            <textarea
+              className="form-control rounded-pill"
+              id="exampleFormControlTextarea1"
+              placeholder="Write a comment..."
+              rows="2"
+            ></textarea>
+          </div>
         </Col>
       </Row>
     </Container>
