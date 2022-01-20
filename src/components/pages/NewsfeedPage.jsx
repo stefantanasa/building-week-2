@@ -11,7 +11,11 @@ const NewsfeedPage = (props) => {
       <MyNavbar />
       <Row>
         <Col md={3}>
-          <LeftSide />
+          <LeftSide 
+            profilePicture={props.profilePicture}
+            name={props.name}
+            surname={props.surname}
+          />
         </Col>
         <Col md={6}>
           <MiddlePart
