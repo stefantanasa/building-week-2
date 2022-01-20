@@ -22,8 +22,12 @@ const NewsfeedPage = (props) => {
             profilePicture={props.profilePicture}
             name={props.name}
             surname={props.surname}
+            posts = {props.posts}
+            submitNewPost={props.submitNewPost}
+            
           />
         </Col>
+      
 
         <Col md={3}>
           <RightSide />

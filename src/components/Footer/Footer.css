@@ -3,13 +3,14 @@
 }
 .footer {
   bottom: 0;
+  margin-top: 100px;
 }
 .iconss {
   font-size: 50px !important;
 }
 h6 {
   margin-bottom: 15px !important;
-  font-size: 18px !important;
+ 
 }
 .footer-logo {
   width: 150px;
@@ -17,4 +18,7 @@ h6 {
 }
 .iconssmini {
   font-size: 30px !important;
+}
+.dropdown-lang{
+  width:280px!important;
 }
