@@ -6,7 +6,7 @@ const LeftSide = (props) => {
     return ( 
         <div className="left-side-bar">
             <section className="list-group d-flex flex-column align-items-start">
-                <div className="side-bar-profile  list-group-item d-flex justify-content-center align-items-center flex-column">
+                <div className="side-bar-profile   list-group-item d-flex justify-content-center align-items-center flex-column">
                     <img src={props.profilePicture}  alt="Profile Picture" width={"25%"} style={{borderRadius: "50%"}} />
                      <h6 className="font-weight-bold mt-4" style={{letterSpacing: ".5px", lineHeight: "0px"}}>Stefan Tanasa</h6> 
                      <p>Full Stack Developer (React)</p>  
@@ -32,7 +32,12 @@ const LeftSide = (props) => {
                     <small className='font-weight-bold'><BsFillBookmarkFill width={'2em'}/> My items</small>
                 </div>
             </section>
-            <section></section>
+            <section>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
         </div>
      );
 }
