@@ -14,8 +14,20 @@ const Post = (props) => {
         <Col className="d-flex">
           <p>John and Chris liked this post</p>
         </Col>
-        <Col sm={1}>
+        <Col sm={2}>
+
+          <div class="dropdown">
           <HiOutlineDotsHorizontal />
+ 
+  <div class="dropdown-content">
+    <a href="#">Edit</a>
+    <a href="#">Delete</a>
+    <a href="#">Save</a>
+  </div>
+</div>
+
+
+          
         </Col>
       </Row>
       <Row>
