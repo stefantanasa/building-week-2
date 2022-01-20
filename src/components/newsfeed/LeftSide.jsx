@@ -22,14 +22,14 @@ const LeftSide = (props) => {
                         <p>585</p>
                     </div>
                 </div>
-                <div className="side-bar-plans card-body py-2 d-flex flex-column align-items-start w-100">
+                <div className="side-bar-plans list-group-item card-body py-2 d-flex flex-column align-items-start w-100">
                     <small>Access exclusive tools & insights</small>
                     <p>
                     <BsFillSquareFill color={'gold'}/>
                     <small className='font-weight-bold'> Try Premium for free</small>
                     </p>
                 </div>
-                <div className='card-body py-2 d-flex align-items-center pb-3 w-100'>
+                <div className='card-body list-group-item py-2 d-flex align-items-center pb-3 w-100'>
                     <small className='font-weight-bold'><BsFillBookmarkFill width={'2em'}/> My items</small>
                 </div>
             </section>
