@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav } from 'react-bootstrap';
-import { BsFillQuestionCircleFill } from 'react-icons';
+import { BsFillQuestionCircleFill } from 'react-icons/bs';
 
 class TopSidebar extends React.Component {
   render() {

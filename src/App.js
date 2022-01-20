@@ -89,7 +89,10 @@ function App() {
           />
           <Route path="*" element={<Error404 />} />
 
-          <Route path="/" element={<ProfilePage />} />
+          <Route
+            path="/"
+            element={<ProfilePage name={name} surname={surname} />}
+          />
         </Routes>
       </BrowserRouter>
 

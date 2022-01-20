@@ -12,10 +12,11 @@ import Skills from "../skills/Skills";
 import MyNavbar from '../Navbar/MyNavbar'
 import MyFooter from '../Footer/MyFooter'
 import { Link } from "react-router-dom";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
     return ( 
         <Container>
           <Row>
@@ -23,7 +24,7 @@ const ProfilePage = () => {
           </Row>
         <Row>
           <Col xs={8}>
-                <Link to="/newsfeed">Newsfeed</Link>
+               
               <Profile />
               <Dashboard />
               <About />
@@ -32,7 +33,7 @@ const ProfilePage = () => {
               <Skills />
               <Accomplishments />
               <Interests />
-              <Causes name={"Stefan"} surname={"Tanasa"}/>
+              <Causes name={propTypes.name} surname={props.surname}/>
 
           </Col>
           <Col sx={4}>

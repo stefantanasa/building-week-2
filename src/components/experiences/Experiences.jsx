@@ -72,8 +72,8 @@ area: "",
       } else {
         console.log("error while fetching");
       }
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -109,6 +109,8 @@ area: "",
     <Container>
       <Row className="bg-light rounded border border-2 my-3">
         <Container>
+
+
           <Row>
             <Col className="d-flex justify-content-start  my-2">
               <p>Experieces</p>
@@ -119,23 +121,7 @@ area: "",
             </Col>
           </Row>
           <Row>
-            <Col>
-            { experience.map((exp) => (
-                <>
-                  <ExperienceTemplate
-                    role={exp.role}
-                    company={exp.company}
-                    startDate={exp.startDate}
-                    endDate={exp.endDate}
-                    area={exp.area}
-                    description={exp.description}
-                    key={exp._id}
-                    
-                    
-                  />
-                </>
-              ))}
-                                 
+                    <Col>
 <Form className={hideForm} onSubmit={handleSubmit}>
                 <Form.Group
                   className="mb-3"
@@ -224,6 +210,26 @@ area: "",
  
                
               </Form>   
+                    </Col>                       
+          </Row>
+          <Row>
+            <Col>
+            {experience[0].role ==="" ? console.log("role is emplty and the id is", experience[0]._id) : experience.map((exp) => (
+                <>
+                  <ExperienceTemplate
+                    role={exp.role}
+                    company={exp.company}
+                    startDate={exp.startDate}
+                    endDate={exp.endDate}
+                    area={exp.area}
+                    description={exp.description}
+                    key={exp._id}
+                    
+                    
+                  />
+                </>
+              ))}
+  
             </Col>
             
           </Row>
