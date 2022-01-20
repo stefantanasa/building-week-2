@@ -3,6 +3,7 @@ import { BsPlusLg } from "react-icons/bs";
 import { Container, Row, Col, Form, Button, FormLabel } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import ExperienceTemplate from "./ExperienceTemplate";
+import ModuleComp from "../newsfeed/ModuleComp";
 
 const Experiences = () => {
   let [experience, setExperience] = useState([
@@ -117,12 +118,13 @@ area: "",
             </Col>
 
             <Col className="d-flex justify-content-end  my-2">
-              <BsPlusLg style={{ cursor: "pointer" }} onClick={hide} />
-            </Col>
-          </Row>
-          <Row>
+
+
+<ModuleComp popUp={<BsPlusLg style={{ cursor: "pointer" }} onClick={hide} />} 
+content ={
+  <Row>
                     <Col>
-<Form className={hideForm} onSubmit={handleSubmit}>
+<Form  onSubmit={handleSubmit}>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
@@ -212,8 +214,43 @@ area: "",
               </Form>   
                     </Col>                       
           </Row>
+
+}
+
+title={"Add experience"}
+/>
+
+              
+            </Col>
+          </Row>
+          
           <Row>
             <Col>
+
+                    {
+                      experience.splice(0,4).map(e=> 
+                        
+                        (<>
+                        {console.log(e)}
+                          <ExperienceTemplate
+                          
+                    role={e.role}
+                    company={e.company}
+                    startDate={e.startDate}
+                    endDate={e.endDate}
+                    area={e.area}
+                    description={e.description}
+                    key={e._id}
+                    
+                    
+                  />
+                        </>
+                        )
+                        
+                        )
+
+                    }
+{/* 
             {experience[0].role ==="" ? console.log("role is emplty and the id is", experience[0]._id) : experience.map((exp) => (
                 <>
                   <ExperienceTemplate
@@ -228,7 +265,7 @@ area: "",
                     
                   />
                 </>
-              ))}
+              ))} */}
   
             </Col>
             

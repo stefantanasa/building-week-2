@@ -5,6 +5,7 @@ import { BsCalendarEvent } from "react-icons/bs";
 import { MdArticle } from "react-icons/md";
 import { useState } from "react";
 import ModuleComp from "./ModuleComp";
+import TextareaPost from "./TextareaPost";
 
 const TopMiddle = (props) => {
 
@@ -91,7 +92,12 @@ const TopMiddle = (props) => {
             </form>
           </div>
 
-            } />
+            } 
+            content={ <TextareaPost /> }
+            title={"Create a post"}
+            
+            
+            />
           
         </Col>
       </Row>

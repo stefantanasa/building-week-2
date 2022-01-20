@@ -1,9 +1,9 @@
 import { useState } from "react";
-import {Row, Col } from 'react-bootstrap'
+import {Row, Col, Alert } from 'react-bootstrap'
 
 const TextareaPost = () => {
 
-
+  let [hasPosted,setHasPosted] = useState("d-none")
     let [post, setPost] = useState([
         {
           text: "starting text",
@@ -20,6 +20,7 @@ const TextareaPost = () => {
         });
       };
     
+   
       let handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -41,6 +42,8 @@ const TextareaPost = () => {
               ...data,
             });
             console.log(post);
+            setHasPosted("")
+            
           } else {
             console.log("error while fetching");
           }
@@ -59,14 +62,31 @@ const TextareaPost = () => {
                   rows="2"
                   onChange={(e) => handleInputs("text", e.target.value)}
                 ></textarea>
-
+{
+   <Alert  className={hasPosted} variant={"success"}>
+   Your post has been posted!
+   </Alert>
+}
               </Row  >
 
         <Row className="d-flex justify-content-end mr-3 mt-2" >
 
+    <Col sm={10}>
+    <div class="input-group mb-3 ">
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile02"/>
+    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose a photo</label>
+  </div>
+  <div class="input-group-append">
+    <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+  </div>
+</div>
+    </Col>
+<Col sm={2}>
                 <button type="submit" className="btn btn-primary  ">
                   Post
                 </button>
+</Col>
         </Row>
 
               

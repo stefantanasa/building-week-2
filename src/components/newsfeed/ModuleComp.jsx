@@ -20,11 +20,14 @@ const ModuleComp = (props) => {
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
-              Create a post
+              {props.title}
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <TextareaPost />
+            {
+              props.content
+            }
+            
           </Modal.Body>
         </Modal>
       </>
