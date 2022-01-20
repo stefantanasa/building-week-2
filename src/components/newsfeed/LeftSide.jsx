@@ -32,7 +32,12 @@ const LeftSide = (props) => {
                     <small className='font-weight-bold'><BsFillBookmarkFill width={'2em'}/> My items</small>
                 </div>
             </section>
-            <section></section>
+            <section>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
         </div>
      );
 }
