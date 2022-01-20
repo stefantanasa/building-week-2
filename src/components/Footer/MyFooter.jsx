@@ -8,8 +8,8 @@ class MyFooter extends React.Component {
   render() {
     return (
       
-        <div className="container">
-          <footer className="footer">
+        <div className="container ">
+          <footer className="footer ">
             <Row>
               <Col md={3}>
                 <h6>About</h6>
@@ -41,7 +41,7 @@ class MyFooter extends React.Component {
                 <div>
                   <div className="d-flex ">
                     <RiSettings4Fill className="iconss" />
-                    <h5 className="ml-2">Manage your account and privacy</h5>
+                    <h5 className=" mt-2">Manage your account and privacy</h5>
                   </div>
                   <h6>Go to your Settings</h6>
                 </div>
@@ -53,7 +53,7 @@ class MyFooter extends React.Component {
                 </Row>
                 <Row>
                   <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Control as="select">
+                    <Form.Control className="dropdown-lang"as="select">
                       <option>English</option>
                       <option>Italian</option>
                       <option>spanish</option>

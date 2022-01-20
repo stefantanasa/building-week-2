@@ -1,4 +1,3 @@
-
 import { Row, Col, Container } from "react-bootstrap";
 import About from "../about/About";
 import Accomplishments from "../accomplishments/Accomplishments";
@@ -9,8 +8,8 @@ import Experiences from "../experiences/Experiences";
 import Interests from "../interests/Interests";
 import Profile from "../profile/Profile";
 import Skills from "../skills/Skills";
-import MyNavbar from '../Navbar/MyNavbar'
-import MyFooter from '../Footer/MyFooter'
+import MyNavbar from "../Navbar/MyNavbar";
+import MyFooter from "../Footer/MyFooter";
 import { Link } from "react-router-dom";
 import { propTypes } from "react-bootstrap/esm/Image";
 
@@ -35,16 +34,4 @@ const ProfilePage = (props) => {
               <Interests />
               <Causes name={propTypes.name} surname={props.surname}/>
 
-          </Col>
-          <Col sx={4}>
-            <h1>Sidebar</h1>
-          </Col>
-        </Row>
-        <Row>
-          <MyFooter />
-        </Row>
-      </Container>
-     );
-}
- 
 export default ProfilePage;
