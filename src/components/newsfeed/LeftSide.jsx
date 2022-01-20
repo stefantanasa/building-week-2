@@ -1,7 +1,8 @@
 import './LeftSide.css'
 import { BsFillSquareFill } from "react-icons/bs";
 import { BsFillBookmarkFill } from "react-icons/bs"
-
+import { BsCalendar2Event } from "react-icons/bs"
+import { MdOutlineGroups } from "react-icons/md"
 const LeftSide = (props) => {
     return ( 
         <div className="left-side-bar">
@@ -32,11 +33,32 @@ const LeftSide = (props) => {
                     <small className='font-weight-bold'><BsFillBookmarkFill width={'2em'}/> My items</small>
                 </div>
             </section>
-            <section>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <section className='card mt-5'>
+                <div className='card-body side-bar-recent'>
+                    <small>Recent</small>
+                    <ul>
+                        <li><BsCalendar2Event /> Webiner with SalesRobot</li>
+                        <li><MdOutlineGroups /> Employer branding </li>
+                        <li><BsCalendar2Event /> dev.js Summit 2022 (online)</li>
+                        <li><MdOutlineGroups /> Praca IT</li>
+                        <li><MdOutlineGroups /> Front end developers group</li>
+                    </ul>
+                </div>
+                <div className='card-body'>
+                <small>Groups</small>
+                    <ul>
+                        <li><MdOutlineGroups /> Employer branding </li>
+                        <li><MdOutlineGroups /> Praca IT</li>
+                        <li><MdOutlineGroups /> Front end developers group</li>
+                    </ul>
+                </div>
+                <div className='card-body'>
+                    <small>Events</small>
+                    <small>Followed Hashtags</small>
+                </div>
+                <div className='card-body'>
+                    <p>Discover more</p>
+                </div>
             </section>
         </div>
      );
