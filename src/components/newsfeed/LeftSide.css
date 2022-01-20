@@ -20,22 +20,4 @@
 .side-bar-profile p {
     font-size: .8rem;
     color: grey;
-    cursor: pointer;
-    cursor: pointer;
-}
-.details-bar div ul {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.details-bar div small {
-    font-weight: 600;
-}
-.details-bar div ul li  {
-    list-style: none;
-    font-size: .9rem;
-    text-align: start;
-    color: rgb(100, 100, 100);
-    cursor: pointer;
 }

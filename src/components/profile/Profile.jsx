@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import ProfileCarousel from "./ProfileCarousel";
 import RoundButton from "./RoundButton";
-import { BsFillPencilFill } from "react-icons/bs";
-import ModuleComp from "../newsfeed/ModuleComp";
-import EditProfileDetails from "./EditProfileDetals";
+import {BsFillPencilFill} from 'react-icons/bs'
 
 const Jumbotron = () => {
   let [name, setName] = useState("name");
@@ -31,12 +29,12 @@ const Jumbotron = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log("Profile info:", data);
+          console.log("Profile info:" ,data);
           setProfilePicture(data.image);
           setBio(data.bio);
           setLocation(data.area);
           setName(data.name);
-          setSurname(data.surname);
+          setSurname(data.surname)
         } else {
           console.log("error while fetching");
         }
@@ -49,25 +47,39 @@ const Jumbotron = () => {
 
   return (
     <Container className="bg-light rounded rounded-2 border border-1">
+      
       <Row className="profile-cover" style={{ height: "15rem" }}>
-        <Col md={3} className="d-flex align-items-end justify-content-center">
-          <img
-            className="rounded-circle profile-picture "
-            src={profilPicture}
-            alt="profile picture"
-          />
-        </Col>
-        <Col className="d-flex justify-content-end ">
-          <BsFillPencilFill />
-        </Col>
+
+          
+
+            <Col md={3} className="d-flex align-items-end justify-content-center">
+            <img
+              className="rounded-circle profile-picture "
+              src={profilPicture}
+              alt="profile picture"
+            />
+            </Col>
+            <Col className="d-flex justify-content-end ">
+            
+
+            <BsFillPencilFill />
+           
+            </Col>
+            
+
+            
+       
+
+        
       </Row>
       <Row className="px-3">
         <Col md={7} className="">
           <Row>
-            <h4>{name + " " + surname}</h4>
+            <h4>{name +" " +surname}</h4>
             <p className="bio">{bio}</p>
           </Row>
           <Row>
+            
             <p>{location}</p>
             <span className="contact-info">- Contact Info</span>
           </Row>
@@ -87,70 +99,18 @@ const Jumbotron = () => {
           <p>Strive School</p>
         </Col>
         <Col className="d-flex justify-content-end pt-3 pr-0">
-          <ModuleComp
-            popUp={<BsFillPencilFill style={{ cursor: "pointer" }} />}
-            content={
-              <form>
-               <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Name"
-                  />
-                  <div class="form-group mt-2">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Surname"
-                  />
-                  
-                </div>
-                  <div class="form-group ">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="headline"
-                    aria-describedby="emailHelp"
-                    placeholder="Headline"
-                  />
-                  <small id="headline" class="form-text text-muted ">
-                    Write a small headline
-                  </small>
-                  
-                </div>
-
-                <select class="form-control" placeholder="Select a pronoun">
-  <option>Mr</option>
-  <option>Ms</option>
-  <option>Mrs</option>
-</select>
-                  <small id="headline" class="form-text text-muted ">
-                    What pronoun would you like to use
-                  </small>
-                  
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  Edit
-                </button>
-              </form>
-            }
-            title={"Add experience"}
-          />
+        <BsFillPencilFill />
         </Col>
       </Row>
       <Row>
         <Col className="d-flex justify-content-start py-2">
-          <RoundButton text="Open to" color="primary" />
-          <RoundButton text="Message" color="light" />
+          <RoundButton text="Open to" color="primary"/>
+          <RoundButton text="Message" color="light"/>
           <RoundButton text="More" color="light" />
         </Col>
       </Row>
       <Row className="d-flex justify-content-center">
-        <ProfileCarousel />
+          <ProfileCarousel />
       </Row>
     </Container>
   );
