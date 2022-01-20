@@ -59,7 +59,7 @@ function App() {
         );
         if (response.ok) {
           const posts = await response.json();
-          setPosts(posts.slice(0, 10));
+          setPosts(posts.slice(-7).reverse());
           console.log("Posts:", posts);
         } else {
           console.log("error while fetching");

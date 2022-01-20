@@ -6,7 +6,11 @@ const MiddlePart = (props) => {
   let images=[]
   return (
     <Container className="rounded-lg ">
-      <TopMiddle profilePicture={props.profilePicture} />
+      <TopMiddle 
+      profilePicture={props.profilePicture} 
+      submitNewPost={props.submitNewPost}
+      
+      />
     
 
 {
@@ -20,6 +24,7 @@ const MiddlePart = (props) => {
       name={p.user.name}
       surname={p.user.surname}
       title={p.user.title}
+      
       />
   )
   

@@ -19,6 +19,8 @@ const NewsfeedPage = (props) => {
             name={props.name}
             surname={props.surname}
             posts = {props.posts}
+            submitNewPost={props.submitNewPost}
+            
           />
         </Col>
       

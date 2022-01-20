@@ -93,7 +93,7 @@ class MyNavbar extends React.Component {
               <Col>
                 <div>
 
-                  <Link to="/me">
+                  <Link to="/">
 
                   <IoPerson className="iconsinnav" />
                   </Link>
