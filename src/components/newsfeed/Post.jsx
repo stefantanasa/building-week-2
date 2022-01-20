@@ -22,7 +22,7 @@ const Post = (props) => {
         <Col sm={2}>
           <img
             className="rounded-circle"
-            src={props.profilePicture}
+            src={props.postPhoto}
             alt="profile picture"
             style={{ height: "50px", width: "50px" }}
           />
@@ -30,7 +30,9 @@ const Post = (props) => {
 
         <Col sm={6}>
           <Row>{props.name + " " + props.surname}</Row>
-          <Row>Job title</Row>
+          <Row className="post-description p-2">
+            
+            {props.title}</Row>
         </Col>
 
         <Col sm={4} className="follow"> <BsPlusLg /> follow</Col>
@@ -68,7 +70,7 @@ const Post = (props) => {
       <Row>
         <Col sm={3}> <img
             className="rounded-circle"
-            src={props.profilePicture}
+            src={props.personalProfilePhoto}
             alt="profile picture"
             style={{ height: "60px", width: "60px" }}
           /></Col>

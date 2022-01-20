@@ -20,8 +20,12 @@ const TopMiddle = (props) => {
                 <Col md={10}>
 
                 <div className="form-group rounded-pill">
-    
+
+               <form>
+                <div className="form-group">
     <textarea className="form-control rounded-pill" id="exampleFormControlTextarea1" placeholder="Write a post..." rows="2"></textarea>
+    </div>
+                   </form>     
   </div>
                 </Col>
             </Row>

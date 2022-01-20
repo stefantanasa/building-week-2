@@ -10,7 +10,9 @@ function App() {
   let [name, setName] = useState("name");
   let [surname, setSurname] = useState("surname");
   let [email, setEmail] = useState("email");
+  let [posts, setPosts] = useState([]);
 
+  //fetch profile data
   useEffect(() => {
     let fetchData = async () => {
       try {
@@ -41,6 +43,34 @@ function App() {
     fetchData();
   }, []);
 
+  //fetch posts
+  useEffect(() => {
+    let fetchPosts = async () => {
+      try {
+        const response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/posts/",
+          {
+            method: "GET",
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU1NGNmMTczZDVjYjAwMTUzOTVhYTIiLCJpYXQiOjE2NDI0MTczOTQsImV4cCI6MTY0MzYyNjk5NH0.BOYfYGGB52eViSSMJgOdkm2UU07TAQm8j6NPZ352yRA",
+            },
+          }
+        );
+        if (response.ok) {
+          const posts = await response.json();
+          setPosts(posts.slice(0, 10));
+          console.log("Posts:", posts);
+        } else {
+          console.log("error while fetching");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchPosts();
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -53,6 +83,7 @@ function App() {
                 name={name}
                 surname={surname}
                 email={email}
+                posts={posts}
               />
             }
           />
