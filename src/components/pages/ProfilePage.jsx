@@ -12,7 +12,7 @@ import MyNavbar from "../Navbar/MyNavbar";
 import MyFooter from "../Footer/MyFooter";
 import { Link } from "react-router-dom";
 import TopSidebar from "../Sidebar/TopSidebar";
-import MidSidebar from "../Sidebar/MidSidebar";
+
 
 const ProfilePage = () => {
   return (
@@ -34,7 +34,7 @@ const ProfilePage = () => {
         </Col>
         <Col sx={4}>
           <TopSidebar />
-          <MidSidebar />
+         
         </Col>
       </Row>
       <Row>
