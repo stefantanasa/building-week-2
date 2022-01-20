@@ -11,27 +11,37 @@ import Skills from "../skills/Skills";
 import MyNavbar from "../Navbar/MyNavbar";
 import MyFooter from "../Footer/MyFooter";
 import { Link } from "react-router-dom";
-import { propTypes } from "react-bootstrap/esm/Image";
+import TopSidebar from "../Sidebar/TopSidebar";
 
 
-
-const ProfilePage = (props) => {
-    return ( 
-        <Container>
-          <Row>
-          <MyNavbar />
-          </Row>
-        <Row>
-          <Col xs={8}>
-               
-              <Profile />
-              <Dashboard />
-              <About />
-              <Activity />
-              <Experiences />
-              <Skills />
-              <Accomplishments />
-              <Interests />
-              <Causes name={propTypes.name} surname={props.surname}/>
+const ProfilePage = () => {
+  return (
+    <Container>
+      <Row>
+        <MyNavbar />
+      </Row>
+      <Row>
+        <Col xs={8}>
+          <Profile />
+          <Dashboard />
+          <About />
+          <Activity />
+          <Experiences />
+          <Skills />
+          <Accomplishments />
+          <Interests />
+          <Causes name={"Stefan"} surname={"Tanasa"} />
+        </Col>
+        <Col sx={4}>
+          <TopSidebar />
+         
+        </Col>
+      </Row>
+      <Row>
+        <MyFooter />
+      </Row>
+    </Container>
+  );
+};
 
 export default ProfilePage;
