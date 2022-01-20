@@ -29,12 +29,12 @@ const LeftSide = (props) => {
                     <small className='font-weight-bold'> Try Premium for free</small>
                     </p>
                 </div>
-                <div className='list-group-item card-body py-2 d-flex align-items-center pb-3 w-100'>
+                <div className='card-body list-group-item py-2 d-flex align-items-center pb-3 w-100'>
                     <small className='font-weight-bold'><BsFillBookmarkFill width={'2em'}/> My items</small>
                 </div>
             </section>
-            <section className='card mt-5'>
-                <div className='card-body side-bar-recent'>
+            <section className='details-bar card list-group mt-5 w-100'>
+                <div className='card-body  side-bar-recent d-flex flex-column align-items-start w-100'>
                     <small>Recent</small>
                     <ul>
                         <li><BsCalendar2Event /> Webiner with SalesRobot</li>
@@ -44,20 +44,20 @@ const LeftSide = (props) => {
                         <li><MdOutlineGroups /> Front end developers group</li>
                     </ul>
                 </div>
-                <div className='card-body'>
-                <small>Groups</small>
-                    <ul>
+                <div className='card-body d-flex flex-column align-items-start w-100'>
+                <small style={{color: 'blue'}}>Groups</small>
+                    <ul> 
                         <li><MdOutlineGroups /> Employer branding </li>
                         <li><MdOutlineGroups /> Praca IT</li>
                         <li><MdOutlineGroups /> Front end developers group</li>
                     </ul>
                 </div>
-                <div className='card-body'>
+                <div className='card-body  d-flex flex-column align-items-start'>
                     <small>Events</small>
                     <small>Followed Hashtags</small>
                 </div>
-                <div className='card-body'>
-                    <p>Discover more</p>
+                <div className='card-body list-group-item'>
+                    <p className='font-weight-bold text-muted' >Discover more</p>
                 </div>
             </section>
         </div>
