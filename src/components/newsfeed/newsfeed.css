@@ -1,0 +1,20 @@
+.post-description {
+  text-align: start;
+}
+
+.follow {
+  color: rgb(10, 102, 194);
+  font-size: larger;
+  font-weight: bold;
+}
+
+.reacts-buttons:hover {
+  font-weight: bold;
+  background-color: rgb(207, 207, 207);
+}
+
+.reacts-buttons {
+  cursor: pointer;
+  height: 50px;
+  border-radius: 0.2rem;
+}
