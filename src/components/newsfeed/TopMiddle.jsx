@@ -4,6 +4,7 @@ import { MdOutlineOndemandVideo } from "react-icons/md";
 import { BsCalendarEvent } from "react-icons/bs";
 import { MdArticle } from "react-icons/md";
 import { useState } from "react";
+import ModuleComp from "./ModuleComp";
 
 const TopMiddle = (props) => {
 
@@ -59,6 +60,9 @@ const TopMiddle = (props) => {
 
     
     <div className="border rounded my-2">
+        <Row>
+            
+        </Row>
       <Row className="p-3">
         <Col md={2}>
           <img
@@ -69,7 +73,10 @@ const TopMiddle = (props) => {
           />
         </Col>
         <Col md={10}>
-          <div className="form-group rounded-pill">
+        <ModuleComp  
+            popUp={
+                
+                <div className="form-group rounded-pill">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <textarea
@@ -79,12 +86,13 @@ const TopMiddle = (props) => {
                   rows="2"
                   onChange={(e) => handleInputs("text", e.target.value)}
                 ></textarea>
-                <button type="submit" className="btn btn-primary">
-                  Post
-                </button>
+
               </div>
             </form>
           </div>
+
+            } />
+          
         </Col>
       </Row>
       <Row className="pb-3">
