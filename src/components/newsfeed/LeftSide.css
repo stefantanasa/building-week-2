@@ -1,0 +1,16 @@
+.side-bar-details div p:nth-child(1) {
+    font-size: .8rem;
+    color: grey;
+}   
+.side-bar-details div p:nth-child(2) {
+    font-size: .9rem;
+    font-weight: bold;
+    color: rgb(0, 117, 196);
+}
+.side-bar-plans small:nth-child(1) {
+    color: grey;
+}
+.side-bar-profile p {
+    font-size: .8rem;
+    color: grey;
+}

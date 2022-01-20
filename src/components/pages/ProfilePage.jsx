@@ -2,7 +2,7 @@
 import { Row, Col, Container } from "react-bootstrap";
 import About from "../about/About";
 import Accomplishments from "../accomplishments/Accomplishments";
-import Activity from "../activity/Activity";
+import Activity from "../Activity/Activity";
 import Causes from "../causes/Causes";
 import Dashboard from "../dashboard/Dashboard";
 import Experiences from "../experiences/Experiences";
