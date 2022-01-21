@@ -17,7 +17,7 @@ const Post = (props) => {
         <Col sm={2}>
 
           <div class="dropdown">
-          <HiOutlineDotsHorizontal />
+          <HiOutlineDotsHorizontal className="ml-4"/>
  
   <div class="dropdown-content">
     <a href="#">Edit</a>
