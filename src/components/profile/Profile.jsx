@@ -50,27 +50,47 @@ const Jumbotron = () => {
       
       <Row className="profile-cover" style={{ height: "15rem" }}>
 
-          
+        <Col md={3} className="d-flex align-items-end justify-content-center">
+          <img
+            className="rounded-circle profile-picture "
+            src={profilPicture}
+            alt="profile picture"
+          />
+        </Col>
+        <Col className="d-flex justify-content-end ">
+        <ModuleComp
+            popUp={<BsFillPencilFill style={{ cursor: "pointer" }} />}
+            content={
+              <form>
+               <div class="form-group">
+               
+                  <div class="input-group mb-3 ">
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile02"/>
+    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose a photo</label>
+  </div>
+  <div class="input-group-append">
+    <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+  </div>
+</div>
 
-            <Col md={3} className="d-flex align-items-end justify-content-center">
-            <img
-              className="rounded-circle profile-picture "
-              src={profilPicture}
-              alt="profile picture"
-            />
-            </Col>
-            <Col className="d-flex justify-content-end ">
+
             
+                  
+                  
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Edit
+                </button>
+              </form>
+            }
+            title={"Change cover"}
+          />
 
-            <BsFillPencilFill />
-           
-            </Col>
-            
 
-            
-       
 
-        
+
+        </Col>
       </Row>
       <Row className="px-3">
         <Col md={7} className="">
