@@ -1,6 +1,5 @@
 import {Col, Row} from 'react-bootstrap'
 import { BsFillPencilFill } from "react-icons/bs";
-import { AiOutlineDelete } from "react-icons/ai";
 
 const ExperienceTemplate = (props) => {
     return ( 
@@ -28,12 +27,7 @@ const ExperienceTemplate = (props) => {
   </p>
 </Col>
 <Col md={1}>
-
-
-    {
-      props.pencil
-    }
-    <AiOutlineDelete height={"10px"} onClick={props.delete} className='pencil'/>
+    <BsFillPencilFill height={"10px"} className='pencil'/>
 </Col>
 </Row>
      );
