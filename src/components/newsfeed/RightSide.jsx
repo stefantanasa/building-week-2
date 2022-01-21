@@ -1,3 +1,4 @@
+import './RightSide.css'
 import { BsFillInfoSquareFill } from "react-icons/bs"
 import { Button } from "react-bootstrap";
 import { BsPlusLg } from "react-icons/bs"
@@ -48,6 +49,21 @@ const RightSide = () => {
           </div>
         </div>
       </section>
+      <footer className="footer-links">
+        <div>
+          <small>About</small>
+          <small>Accessibility</small>
+          <small>Help Center</small>
+          <small>Privacy & Policy</small>
+          <small>Ad Choice</small>
+          <small>Business services</small>
+          <small>Get the LinkedIn App</small>
+          <small>More</small>
+        </div>
+        <div>
+          <small>Linkedin Corporation &copy; 2022</small>
+        </div>
+      </footer>
     </div>
   );
 };

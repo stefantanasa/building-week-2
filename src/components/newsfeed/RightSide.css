@@ -1,0 +1,4 @@
+.footer-links div:nth-child(1) small {
+    color: grey;
+    margin-left: 1em;
+}
