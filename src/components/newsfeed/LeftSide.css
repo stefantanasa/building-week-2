@@ -18,6 +18,11 @@
   color: grey;
 }
 .side-bar-profile p {
+ 
+    font-size: .8rem;
+    color: grey;
+}
+ 
   font-size: 0.8rem;
   color: grey;
   cursor: pointer;
@@ -88,3 +93,4 @@
 .dropdown:hover .dropbtn {
   background-color: transparent;
 }
+

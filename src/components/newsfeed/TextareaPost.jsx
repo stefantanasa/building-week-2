@@ -44,6 +44,7 @@ const TextareaPost = () => {
             console.log(post);
             setHasPosted("")
             
+            
           } else {
             console.log("error while fetching");
           }
@@ -66,6 +67,7 @@ const TextareaPost = () => {
    <Alert  className={hasPosted} variant={"success"}>
    Your post has been posted!
    </Alert>
+   
 }
               </Row  >
 
