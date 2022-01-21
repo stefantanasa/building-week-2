@@ -90,7 +90,7 @@ function App() {
           <Route path="*" element={<Error404 />} />
 
           <Route
-            path="/"
+            path="/me"
             element={<ProfilePage name={name} surname={surname} />}
           />
         </Routes>
