@@ -28,7 +28,7 @@ function App() {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log("Profile info:", data);
+          // console.log("Profile info:", data);
           setProfilePicture(data.image);
           setName(data.name);
           setSurname(data.surname);
@@ -60,7 +60,6 @@ function App() {
         if (response.ok) {
           const posts = await response.json();
           setPosts(posts.slice(-7).reverse());
-          console.log("Posts:", posts);
         } else {
           console.log("error while fetching");
         }
@@ -76,7 +75,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/newsfeed"
+            path="/"
             element={
               <NewsfeedPage
                 profilePicture={profilePicture}
