@@ -18,16 +18,10 @@
   color: grey;
 }
 .side-bar-profile p {
- 
-    font-size: .8rem;
-    color: grey;
-}
- 
   font-size: 0.8rem;
   color: grey;
-  cursor: pointer;
-  cursor: pointer;
 }
+
 .details-bar div ul {
   width: 100%;
   display: flex;
@@ -93,4 +87,3 @@
 .dropdown:hover .dropbtn {
   background-color: transparent;
 }
-
