@@ -34,7 +34,7 @@ const Post = (props) => {
         <Col sm={2}>
           <img
             className="rounded-circle"
-            src={props.postPhoto}
+            src={props.userProfilePhoto}
             alt="profile picture"
             style={{ height: "50px", width: "50px" }}
           />
@@ -57,6 +57,7 @@ const Post = (props) => {
       </Row>
       <Row>
         <img width={"100%"} src={props.postPhoto} alt="img post" />
+        <h4>{props.postId}</h4>
       </Row>
       <Row>
         <Col sm={4}>reactions</Col>

@@ -18,8 +18,10 @@ const NewsfeedPage = (props) => {
           />
         </Col>
         <Col md={6}>
+          {console.log("from newsfeed: ",props.postId)}
           <MiddlePart
             profilePicture={props.profilePicture}
+            postId = {props.postId}
             name={props.name}
             surname={props.surname}
             posts = {props.posts}

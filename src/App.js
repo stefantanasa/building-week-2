@@ -11,6 +11,7 @@ function App() {
   let [surname, setSurname] = useState("surname");
   let [email, setEmail] = useState("email");
   let [posts, setPosts] = useState([]);
+  let [postId, setPostId] = useState("");
 
   //fetch profile data
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
           setName(data.name);
           setSurname(data.surname);
           setEmail(data.email);
+          setPostId(data._id);
         } else {
           console.log("error while fetching");
         }
@@ -84,9 +86,11 @@ function App() {
                 surname={surname}
                 email={email}
                 posts={posts}
+                postId={postId}
               />
             }
           />
+          {console.log("PostId: ", postId)}
           <Route path="*" element={<Error404 />} />
 
           <Route

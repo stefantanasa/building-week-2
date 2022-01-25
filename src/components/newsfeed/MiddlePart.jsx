@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Post from "./Post";
+import TestUploadImage from "./TestUploadImage";
 import TopMiddle from "./TopMiddle";
 
 const MiddlePart = (props) => {
@@ -12,6 +13,8 @@ const MiddlePart = (props) => {
       
       />
     
+<TestUploadImage />
+
 
 {
   props.posts.filter (p=>p.user ).map(p=>
@@ -20,10 +23,12 @@ const MiddlePart = (props) => {
     <Post 
     postDescription={p.text}
      key={p._id}
-      postPhoto={p.user.image}
+      userProfilePhoto={p.user.image}
+      postPhoto={p.image}
       name={p.user.name}
       surname={p.user.surname}
       title={p.user.title}
+      postId = {p._id}
       
       />
   )
